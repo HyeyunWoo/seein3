@@ -18,9 +18,12 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnInitListener {
 
     // LogCat tag
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -35,12 +38,15 @@ public class MainActivity extends Activity {
 
     private Uri fileUri; // file url to store image/video
 
-    private Button btnCapturePicture, btnRecordVideo;
+    private TextToSpeech mytts;
+    private Button btnCapturePicture /*, btnRecordVideo*/;
+    //private TextView noticeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mytts = new TextToSpeech(this, this);
 
         // Changing action bar background color
         // These two lines are not needed
@@ -85,6 +91,12 @@ public class MainActivity extends Activity {
             finish();
         }
     }
+
+    public void onInit(int status){
+        String noticeText = "사진을 촬영하려면 하단의 버튼을 눌러주세요";
+        mytts.speak(noticeText, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
 
     /**
      * Checking device has camera hardware or not
@@ -260,5 +272,11 @@ public class MainActivity extends Activity {
         }
 
         return mediaFile;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mytts.shutdown();
     }
 }
