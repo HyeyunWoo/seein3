@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -59,6 +60,9 @@ public class MainActivity extends Activity {
                 captureImage();
             }
         });
+
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/NanumSquareRoundB.ttf"); //asset > fonts 폴더 내 폰트파일 적용
+        btnCapturePicture.setTypeface(typeFace);
 
         /**
          * Record video button click event
