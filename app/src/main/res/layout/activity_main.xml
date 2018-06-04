@@ -8,19 +8,22 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="100dp"
-        android:text="사진을 촬영하려면 하단의 버튼을 눌러주세요"
+
+
+        android:paddingTop="50dp"
+        android:text="@string/notice"
+        android:layout_marginBottom="185dp"
+        android:textSize="60dp"
+        android:gravity="center"
         android:layout_above="@+id/btnCapturePicture"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="122dp"
-        android:textSize="30dp"/>
+        android:layout_centerHorizontal="true" />
 
 
         <Button
             android:id="@+id/btnCapturePicture"
-            android:layout_width="500dp"
+            android:layout_width="700dp"
             android:layout_height="300dp"
             android:layout_marginBottom="28dp"
             android:background="@color/btn_bg"

@@ -3,6 +3,6 @@
     <string name="app_name">Camera File Upload</string>
     <string name="btnTakePicture">상품 촬영</string>
     <string name="btnRecordVideo">Record Video</string>
-    <string name="or">(or)</string>
+    <string name="notice">사진을 촬영하려면 하단의 버튼을 눌러주세요</string>
     <string name="btnUploadToServer">Upload to Server</string>
 </resources>
