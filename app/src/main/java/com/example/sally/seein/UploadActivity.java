@@ -46,7 +46,7 @@ public class UploadActivity extends Activity {
     private String filePath = null;
     private TextView txtPercentage;
     private ImageView imgPreview;
-    private VideoView vidPreview;
+    //private VideoView vidPreview;
     private Button btnUpload;
     long totalSize = 0;
 
@@ -58,7 +58,7 @@ public class UploadActivity extends Activity {
         btnUpload = (Button) findViewById(R.id.btnUpload);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         imgPreview = (ImageView) findViewById(R.id.imgPreview);
-        vidPreview = (VideoView) findViewById(R.id.videoPreview);
+        //vidPreview = (VideoView) findViewById(R.id.videoPreview);
 
         // Changing action bar background color
         //getActionBar().setBackgroundDrawable(
@@ -100,7 +100,7 @@ public class UploadActivity extends Activity {
         // Checking whether captured media is image or video
         if (isImage) {
             imgPreview.setVisibility(View.VISIBLE);
-            vidPreview.setVisibility(View.GONE);
+            //vidPreview.setVisibility(View.GONE);
             // bimatp factory
             BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -113,10 +113,10 @@ public class UploadActivity extends Activity {
             imgPreview.setImageBitmap(bitmap);
         } else {
             imgPreview.setVisibility(View.GONE);
-            vidPreview.setVisibility(View.VISIBLE);
-            vidPreview.setVideoPath(filePath);
+            //vidPreview.setVisibility(View.VISIBLE);
+            //vidPreview.setVideoPath(filePath);
             // start playing
-            vidPreview.start();
+            //vidPreview.start();
         }
     }
 

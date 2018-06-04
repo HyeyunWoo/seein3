@@ -34,13 +34,13 @@ public class MainActivity extends Activity implements OnInitListener {
     private static final int CAMERA_CAPTURE_VIDEO_REQUEST_CODE = 200;
 
     public static final int MEDIA_TYPE_IMAGE = 1;
-    public static final int MEDIA_TYPE_VIDEO = 2;
+   // public static final int MEDIA_TYPE_VIDEO = 2;
 
     private Uri fileUri; // file url to store image/video
 
     private TextToSpeech mytts;
     private Button btnCapturePicture /*, btnRecordVideo*/;
-    //private TextView noticeText;
+    private TextView noticeText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,8 @@ public class MainActivity extends Activity implements OnInitListener {
 
         btnCapturePicture = (Button) findViewById(R.id.btnCapturePicture);
         //btnRecordVideo = (Button) findViewById(R.id.btnRecordVideo);
+        noticeText = (TextView)findViewById(R.id.noticeText);
+
 
         /**
          * Capture image button click event
@@ -69,6 +71,8 @@ public class MainActivity extends Activity implements OnInitListener {
 
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/NanumSquareRoundB.ttf"); //asset > fonts 폴더 내 폰트파일 적용
         btnCapturePicture.setTypeface(typeFace);
+        noticeText.setTypeface(typeFace);
+
 
         /**
          * Record video button click event
@@ -93,7 +97,7 @@ public class MainActivity extends Activity implements OnInitListener {
     }
 
     public void onInit(int status){
-        String noticeText = "사진을 촬영하려면 하단의 버튼을 눌러주세요";
+        String noticeText = "사진을 촬영하려면 하단의 사진 촬영 버튼을 눌러주세요";
         mytts.speak(noticeText, TextToSpeech.QUEUE_FLUSH, null);
     }
 
@@ -264,10 +268,10 @@ public class MainActivity extends Activity implements OnInitListener {
         if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator
                     + "IMG_" + timeStamp + ".jpg");
-        } else if (type == MEDIA_TYPE_VIDEO) {
+        } /*else if (type == MEDIA_TYPE_VIDEO) {
             mediaFile = new File(mediaStorageDir.getPath() + File.separator
                     + "VID_" + timeStamp + ".mp4");
-        } else {
+        }*/ else {
             return null;
         }
 
