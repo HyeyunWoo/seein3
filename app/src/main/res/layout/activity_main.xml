@@ -7,45 +7,28 @@
     android:baselineAligned="false"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:orientation="vertical" >
+        android:text="사진을 촬영하려면 하단의 버튼을 눌러주세요"
+        android:layout_above="@+id/btnCapturePicture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="122dp"
+        android:textSize="30dp"/>
 
-        <!-- Capture picture button -->
 
         <Button
             android:id="@+id/btnCapturePicture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="28dp"
             android:background="@color/btn_bg"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
             android:text="@string/btnTakePicture"
-            android:textColor="@color/white" />
+            android:textSize="50dp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center_horizontal"
-            android:text="@string/or"
-            android:textColor="@color/txt_font" />
-
-        <!-- Record video button -->
-
-        <Button
-            android:id="@+id/btnRecordVideo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/btn_bg"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/btnRecordVideo"
-            android:textColor="@color/white" />
-    </LinearLayout>
 
 </RelativeLayout>

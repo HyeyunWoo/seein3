@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
       //  getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(getResources().getString(R.color.action_bar))));
 
         btnCapturePicture = (Button) findViewById(R.id.btnCapturePicture);
-        btnRecordVideo = (Button) findViewById(R.id.btnRecordVideo);
+        //btnRecordVideo = (Button) findViewById(R.id.btnRecordVideo);
 
         /**
          * Capture image button click event
@@ -62,8 +62,8 @@ public class MainActivity extends Activity {
 
         /**
          * Record video button click event
-         */
-        btnRecordVideo.setOnClickListener(new View.OnClickListener() {
+
+       btnRecordVideo.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -71,7 +71,7 @@ public class MainActivity extends Activity {
                 recordVideo();
             }
         });
-
+         */
         // Checking camera availability
         if (!isDeviceSupportCamera()) {
             Toast.makeText(getApplicationContext(),
@@ -112,7 +112,7 @@ public class MainActivity extends Activity {
 
     /**
      * Launching camera app to record video
-     */
+
     private void recordVideo() {
         Intent intent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
 
@@ -127,6 +127,7 @@ public class MainActivity extends Activity {
         // start the video capture Intent
         startActivityForResult(intent, CAMERA_CAPTURE_VIDEO_REQUEST_CODE);
     }
+     */
 
     /**
      * Here we store the file url as it will be null after returning from camera
