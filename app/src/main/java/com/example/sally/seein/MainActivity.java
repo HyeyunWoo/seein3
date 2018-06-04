@@ -200,7 +200,7 @@ public class MainActivity extends Activity implements OnInitListener {
                         .show();
             }
 
-        } else if (requestCode == CAMERA_CAPTURE_VIDEO_REQUEST_CODE) {
+        } /*else if (requestCode == CAMERA_CAPTURE_VIDEO_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
 
                 // video successfully recorded
@@ -220,7 +220,7 @@ public class MainActivity extends Activity implements OnInitListener {
                         "Sorry! Failed to record video", Toast.LENGTH_SHORT)
                         .show();
             }
-        }
+        }*/
     }
 
     private void launchUploadActivity(boolean isImage){

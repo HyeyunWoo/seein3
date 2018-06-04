@@ -9,15 +9,16 @@
 
     <TextView
         android:id="@+id/noticeText"
-        android:layout_width="match_parent"
+        android:layout_width="600dp"
         android:layout_height="wrap_content"
         android:paddingTop="50dp"
         android:text="@string/notice"
         android:layout_marginBottom="185dp"
-        android:textSize="60dp"
+        android:textSize="50dp"
         android:gravity="center"
         android:layout_above="@+id/btnCapturePicture"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra ="10dp" />
 
 
         <Button
