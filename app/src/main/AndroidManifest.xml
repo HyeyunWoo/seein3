@@ -25,6 +25,10 @@
             android:name="com.example.sally.seein.UploadActivity"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.example.sally.seein.ActivityResult"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

@@ -4,29 +4,12 @@ package com.example.sally.seein;
  * Created by sally on 2018-06-01.
  */
 
-import com.example.sally.seein.AndroidMultiPartEntity.ProgressListener;
-
-import java.io.File;
-import java.io.IOException;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,7 +19,20 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
+
+import com.example.sally.seein.AndroidMultiPartEntity.ProgressListener;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
+
+import java.io.File;
+import java.io.IOException;
 
 public class UploadActivity extends Activity {
     // LogCat tag
@@ -196,6 +192,10 @@ public class UploadActivity extends Activity {
             } catch (IOException e) {
                 responseString = e.toString();
             }
+
+            // 디비 결과 받아오는 화면 이사 준비
+            Intent intent=new Intent(UploadActivity.this,ActivityResult.class);
+            startActivity(intent);
 
             return responseString;
 
